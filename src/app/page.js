@@ -1,21 +1,15 @@
 import AboutSection from "./components/home/about";
-import Contact from "./components/home/contact";
-import Education from "./components/home/education";
-import Experience from "./components/home/experience";
+import ClientSections from "./components/home/ClientSections";
 import HeroSection from "./components/home/hero-section";
 import Projects from "./components/home/projects";
-import Skills from "./components/home/skills";
 
 export default function Home() {
 	return (
 		<div>
 			<HeroSection />
 			<AboutSection />
-			<Experience />
-			<Skills />
 			<Projects />
-			<Education />
-			<Contact />
+			<ClientSections/>
 		</div>
 	);
 }
