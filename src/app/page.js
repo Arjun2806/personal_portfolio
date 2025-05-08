@@ -1,10 +1,13 @@
+import dynamic from "next/dynamic";
+
 import AboutSection from "./components/home/about";
-import Contact from "./components/home/contact";
-import Education from "./components/home/education";
-import Experience from "./components/home/experience";
 import HeroSection from "./components/home/hero-section";
 import Projects from "./components/home/projects";
 import Skills from "./components/home/skills";
+
+const Experience = dynamic(() => import("./components/home/experience"), { ssr: false });
+const Education = dynamic(() => import("./components/home/education"), { ssr: false });
+const Contact = dynamic(() => import("./components/home/contact"), { ssr: false });
 
 export default function Home() {
 	return (
