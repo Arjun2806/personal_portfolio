@@ -25,7 +25,7 @@ export const personalData = {
 	phone: '+91 9662843427',
 	address: 'Vadodara - 390021, Gujarat, India',
 	github: 'https://github.com/Arjun2806',
-	linkedIn: 'https://www.linkedin.com/in/arjun-suthar/',
+	linkedIn: 'https://www.linkedin.com/in/arjun-suthar-52b6b122b',
 	resume: "https://drive.google.com/file/d/190U4i8PxivlF_0Rxbgi9kmrzGeKksDyC/view?usp=sharing"
 }
 
