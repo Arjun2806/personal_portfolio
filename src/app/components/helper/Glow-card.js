@@ -1,4 +1,4 @@
-"use client";
+"use client"
 
 import { useEffect } from 'react';
 
@@ -8,8 +8,6 @@ const GlowCard = ({ children, identifier }) => {
 
 		const CONTAINER = document.querySelector(`.glow-container-${identifier}`);
 		const CARDS = document.querySelectorAll(`.glow-card-${identifier}`);
-
-		if (!CONTAINER || !CARDS.length) return; // ✅ guard if not found
 
 		const CONFIG = {
 			proximity: 40,
@@ -66,6 +64,7 @@ const GlowCard = ({ children, identifier }) => {
 		RESTYLE();
 		UPDATE();
 
+		// Cleanup event listener
 		return () => {
 			document.body.removeEventListener('pointermove', UPDATE);
 		};
