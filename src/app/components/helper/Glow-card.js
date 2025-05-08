@@ -4,10 +4,22 @@ import { useEffect } from 'react';
 
 const GlowCard = ({ children, identifier }) => {
 	useEffect(() => {
+		// ✅ Prevent any server-side crash
 		if (typeof document === "undefined") return;
 
-		const CONTAINER = document.querySelector(`.glow-container-${identifier}`);
-		const CARDS = document.querySelectorAll(`.glow-card-${identifier}`);
+		let CONTAINER;
+		let CARDS;
+
+		// Wrap in a try block to safely defer DOM access
+		try {
+			CONTAINER = document.querySelector(`.glow-container-${identifier}`);
+			CARDS = document.querySelectorAll(`.glow-card-${identifier}`);
+		} catch (e) {
+			console.warn('GlowCard skipped due to missing DOM:', e);
+			return;
+		}
+
+		if (!CONTAINER || !CARDS.length) return;
 
 		const CONFIG = {
 			proximity: 40,
@@ -64,7 +76,6 @@ const GlowCard = ({ children, identifier }) => {
 		RESTYLE();
 		UPDATE();
 
-		// Cleanup event listener
 		return () => {
 			document.body.removeEventListener('pointermove', UPDATE);
 		};
