@@ -4,8 +4,10 @@ import { educations } from '@/app/utils/data'
 import Image from "next/image";
 import { BsPersonWorkspace } from "react-icons/bs";
 import lottieFile from '../../../assets/lottie/study.json';
-import AnimationLottie from "../../helper/Animation-lottie";
-import GlowCard from "../../helper/Glow-card";
+import dynamic from 'next/dynamic';
+
+const GlowCard = dynamic(() => import('../../helper/Glow-card'), { ssr: false });
+const AnimationLottie = dynamic(() => import('../../helper/Animation-lottie'), { ssr: false });
 
 const Education = () => {
 	return (
