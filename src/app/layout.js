@@ -3,7 +3,9 @@ import "./css/globals.css";
 import './css/card.css';
 import './css/loader.css';
 import { ToastContainer } from "react-toastify";
-import ClientLayout from "./components/ClientLayout";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+import ScrollToTop from "./components/helper/Scroll-to-top";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,7 +20,12 @@ export default function RootLayout({ children }) {
 		<html lang="en">
 			<body className={inter.className}>
 				<ToastContainer />
-				<ClientLayout />
+				<main className="min-h-screen relative mx-auto px-4 sm:px-12 lg:max-w-[70rem] xl:max-w-[76rem] 2xl:max-w-[92rem] text-white">
+					<Navbar />
+					{children}
+					<ScrollToTop />
+				</main>
+				<Footer />
 			</body>
 		</html>
 	);
