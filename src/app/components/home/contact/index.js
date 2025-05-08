@@ -2,8 +2,6 @@ import { personalData } from '@/app/utils/data';
 import Link from 'next/link';
 import { BiLogoLinkedin } from "react-icons/bi";
 import { CiLocationOn } from "react-icons/ci";
-import { FaFacebook, FaStackOverflow } from 'react-icons/fa';
-import { FaXTwitter } from "react-icons/fa6";
 import { IoLogoGithub, IoMdCall } from "react-icons/io";
 import { MdAlternateEmail } from "react-icons/md";
 import ContactForm from './ContactForm';

@@ -1,5 +1,3 @@
-'use client';
-
 import { skillsData } from "@/app/utils/data";
 import { skillsImage } from "@/app/utils/data";
 import Image from "next/image";
